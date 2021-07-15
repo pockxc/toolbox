@@ -7,10 +7,11 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'src'),
+      package: resolve(__dirname, 'package')
     }
   },
-  base: './', // 设置打包路径
+  base: '/vite-vue3-starter/', // 设置打包路径
   server: {
     port: 4000,
     open: true,

@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import Home from '@/views/Home.vue'
+import { scheduleApp } from './apps'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  }
+    redirect: '/schedule'
+  },
+  ...scheduleApp
 ]
 
 const router = createRouter({

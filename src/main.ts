@@ -1,11 +1,20 @@
-import { createApp } from 'vue'
-import antd from 'ant-design-vue'
-import App from './App.vue'
+import { createApp, App as appType } from 'vue'
+
+import { initNaiveUI } from './utils/naiveUI'
 
 import router from './router/index'
 import store from './store/index'
-import 'ant-design-vue/dist/antd.css'
 
-const app = createApp(App)
+import App from './App.vue'
+import './styles/index.less'
 
-app.use(router).use(store).use(antd).mount('#app')
+const instance = createApp(App)
+
+function bootstrap(app: appType) {
+  app.use(router)
+  app.use(store)
+  initNaiveUI(app)
+  app.mount('#app')
+}
+
+bootstrap(instance)
