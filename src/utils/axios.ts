@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { message } from 'ant-design-vue'
 
 const baseURL = '/'
 
@@ -19,11 +18,11 @@ axios.interceptors.response.use(
     if (err.response && err.response.data) {
       const code = err.response.status
       const msg = err.response.data.message
-      message.error(`Code: ${code}, Message: ${msg}`)
+//       message.error(`Code: ${code}, Message: ${msg}`)
       // eslint-disable-next-line no-console
       console.error('[Axios Error]', err.response)
     } else {
-      message.error(`${err}`)
+//       message.error(`${err}`)
     }
     return Promise.reject(err)
   }
